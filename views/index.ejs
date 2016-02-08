@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+    $(function(){
+
+      $.ajax({
+        url: 'https://www.kimonolabs.com/api/9w66kn6i',
+        apikey: 'NCAA_API_KEY',
+        method: 'GET',
+        dataType: 'jsonp',
+        data: {
+
+        }
+      })
+      .done(function(data) {
+        console.log(data);
+      });
+
+    });
+    </script>
+  </body>
+</html>
