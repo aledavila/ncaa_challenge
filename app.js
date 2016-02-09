@@ -4,6 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var passport = require('passport');
+var flash    = require('connect-flash');
+var session      = require('express-session');
+
+var configDB = require('./config/database.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -21,6 +27,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(flash()); // use connect-flash for flash messages stored in session
+
+// connecting to MongoDb
+mongoose.connect(process.env.DB_CONN_NCAA_CHALLENGE);
+
+require('./config/passport')(passport); // pass passport for configuration
+
+// routes ======================================================================
+require('./app/routes.js')(app, passport); // load our routes and pass in our app and fully
+
 
 app.use('/', routes);
 app.use('/users', users);

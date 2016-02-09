@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <!-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> --> <!-- load fontawesome -->
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; }
+    </style>
+</head>
+<body>
+<div class="ui container">
+
+    <div class="ui middle aligned center aligned grid">
+      <div class="column">
+        <h1 class="ui red image header">
+          <div class="content">
+            Login
+          </div>
+        </h1>
+        <form class="ui large form" action="/login" method="post">
+          <div class="ui stacked segment">
+            <div class="field form-group">
+              <div class="ui left icon input">
+                <i class="user icon"></i>
+                <input type="text" class="form-control" name="email" placeholder="E-mail address">
+              </div>
+            </div>
+            <div class="field form-group">
+              <div class="ui left icon input">
+                <i class="lock icon"></i>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+              </div>
+            </div>
+            <button class="ui fluid large red submit button" type="submit">Login</button>
+          </div>
+
+          <div class="ui error message"></div>
+
+        </form>
+
+        <!-- show any messages that come back with authentication -->
+        <% if (message.length > 0) { %>
+            <div class="alert alert-danger"><%= message %></div>
+        <% } %>
+
+        <div class="ui message">
+          <p>New to us? <a href="/signup"> Sign Up</a></p>
+          <p>Back to <a href="/">home</a> page.</p>
+        </div>
+
+        <h3 class="header">Or Login With:</h2>
+        <div class="ui card">
+          <a href="/auth/facebook" class="ui small facebook button"><i class="facebook icon"></i> Facebook</a>
+          <a href="/auth/twitter" class="ui small twitter button"><i class="twitter icon"></i> Twitter</a>
+        </div>
+
+      </div>
+    </div>
+
+
+</div>
+</body>
+</html>
