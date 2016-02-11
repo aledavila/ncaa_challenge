@@ -1,7 +1,16 @@
 $(function(){
 
-  var appendCurrentGames = function(currentGames) {
-
+  var appendCurrentGames = function(current) {
+    $('#result').append('<div class="six wide column"><div class="ui card games">' +
+        '<div class="score">' + current.awayScore + '</div>' +
+        '<div class="header gamehead">' + current.awayTeam.text + '</div>' +
+        '<div class="extra content">' + current.awaySpread + '<br>' + current.awayML + '</div></div></div>' +
+        '<div class="two wide column"><h3> vs. </h3><h4>' + current.gameStatus + '</h4><button type="submit" class="ui primary button">Submit</button></div>' +
+        '<div class="six wide column"><div class="ui card games">' +
+        '<div class="score">' + current.homeScore + '</div>' +
+        '<div class="header gamehead">' + current.homeTeam.text + '</div>' +
+        '<div class="extra content">' + current.homeSpread + '<br>' + current.homeML + '</div></div>' +
+        '</div>');
   }
 
   $.ajax({
@@ -17,24 +26,12 @@ $(function(){
     var currentGames = data['results']['collection1'];
 
     $.each(currentGames, function(_, value) {
-      $('.list').append('<div class="item"><div class="header"><span class="away">' + value.awayTeam.text + '</span> <span class="notbold">v</span> <span class="home">' + value.homeTeam.text + '</span></div>');
+      appendCurrentGames(value);
     });
 
-    // // Take results and output to the page
-    // for (var i = 0; i < currentGames.length; i++) {
-    //   // console.log('Game: ', currentGames[i]);
-
-    //   var games = '<div class="item"><div class="header">' + currentGames[i].away + '</h4>' +
-    //     '<img src="' + movies[i].Poster + '">' +
-    //     '</li>';
-
-    //     // <div class="item">
-    //     //   <div class="header">New York City</div>
-    //     //   A lovely city
-    //     // </div>
-
-    //   $('.ui.list').append(games);
-    // }
+    $('.games').on('click', function() {
+      $(this).toggleClass('selection');
+    });
   });
 
 });

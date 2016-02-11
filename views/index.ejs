@@ -12,18 +12,31 @@
 
     <div class="ui container">
 
-        <div class="ui huge header">
-            <h1>NCAA Challenge</h1>
+        <div class="ui secondary  menu">
+            <div class="ui huge header">
+                <h1>NCAA Challenge</h1>
+            </div>
+            <div class="right menu">
+                <% if (user) { %>
+                <div class="item">
+                    <a href="/profile" class="ui button">Profile</a>
+                </div>
+                <div class="item">
+                    <a href="/logout" class="ui button"><i class="user icon"></i> Logout</a>
+                </div>
+                <% } else { %>
+                <div class="item">
+                    <a href="/login" class="ui button"><i class="user icon"></i> Login</a>
+                </div>
+                <div class="item">
+                  <a href="/signup" class="ui button"><i class="user icon"></i> Sign Up</a>
+                </div>
+                <% } %>
+            </div>
         </div>
 
-            <p>Login or Register with:</p>
 
-            <a href="/login" class="ui button"><i class="user icon"></i> Login</a>
-            <a href="/signup" class="ui button"><i class="user icon"></i> Signup</a>
-
-        <div class="ui middle aligned center aligned grid">
-            <div class="ui list">
-            </div>
+        <div class="ui middle aligned center aligned grid" id="result">
         </div>
 
     </div>

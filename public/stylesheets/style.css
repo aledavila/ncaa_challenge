@@ -1,6 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Nobile:700|Kanit|Raleway|Lato);
+
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 15px "Kanit", Helvetica, Arial, sans-serif;
+}
+
+h1 {
+  font-family: "Nobile", sans-serif;
+  color: #D63833;
+  font-size: 1.75em;
 }
 
 a {
@@ -14,7 +22,7 @@ body > .grid {
   margin-top: -100px;
 }
 .column {
-  max-width: 450px;
+  max-width: 500px;
 }
 
 .ui.card {
@@ -22,6 +30,33 @@ body > .grid {
   margin-bottom: 5%;
 }
 
+.ui.grid>[class*="six wide"].column {
+  width: 350px !important;
+}
+
+.games {
+  margin: 5% !important;
+  text-align: center;
+}
+
+.selection {
+  background-color: red;
+}
+
+.score {
+  font-size: 22px;
+  color: #68BDF9;
+}
+
+.gamehead {
+  font-size: 20px !important;
+}
+
 .notbold {
   font-weight: 300;
+}
+
+.ui.middle {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
