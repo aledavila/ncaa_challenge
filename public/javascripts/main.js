@@ -7,7 +7,7 @@ $(function(){
         '<div class="extra content">' + current.awaySpread + '<br>' + current.awayML +
         '<br><button class="ui button choice" data-game-id="' + current.index + '" data-team-name="' + current.awayTeam.text + '" data-team-score="' + current.awayScore +'">Choose</button>' +
         '</div></div></div>' +
-        '<div class="two wide column"><h3> vs. </h3><h4>' + current.gameTime + '</h4><h4>' + current.gameStatus + '</h4></div>' +
+        '<div class="two wide column"><h3> vs. </h3><h4 class="time">' + current.gameTime + '</h4><h4 class="status">' + current.gameStatus + '</h4></div>' +
         '<div class="six wide column"><div class="ui card games" data-game-id="' + current.index + '">' +
         '<div class="score">' + current.homeScore + '</div>' +
         '<div class="header gamehead">' + current.homeTeam.text + '</div>' +

@@ -7,8 +7,24 @@ body {
 
 h1 {
   font-family: "Nobile", sans-serif;
-  color: #D63833;
+  color: #081577;
   font-size: 1.75em;
+}
+
+.ui.button {
+  background-color: #3D3D3D;
+  color: white;
+  font-family: "Kanit", Helvetica;
+}
+
+.ui.button.login, .ui.button.signup {
+  background-color: #D90429;
+  color: white;
+}
+
+.ui.button.profile, .ui.button.logout {
+  background-color: #3D3D3D;
+  color: white;
 }
 
 a {
@@ -18,9 +34,11 @@ a {
 body > .grid {
   height: 100%;
 }
+
 .image {
   margin-top: -100px;
 }
+
 .column {
   max-width: 500px;
 }
@@ -39,14 +57,9 @@ body > .grid {
   text-align: center;
 }
 
-.selected {
-  background-color: red !important;
-  color: white !important;
-}
-
 .score {
   font-size: 25px;
-  color: #68BDF9;
+  color: #09198E;
 }
 
 .gamehead {
@@ -60,4 +73,25 @@ body > .grid {
 .ui.middle {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.time {
+  font-size: 16px;
+  color: #D90429;
+}
+
+.extra.content>button {
+  margin-top: 2%;
+}
+
+.selected {
+  background-color: red !important;
+  color: white !important;
+}
+
+#profile {
+  font-family: Raleway;
+  font-weight: 500;
+  font-size: 45px;
+  margin-bottom: 2%;
 }

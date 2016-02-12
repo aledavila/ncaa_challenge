@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+    <style>
+        body        { padding-top:80px; word-wrap:break-word; }
+    </style>
+</head>
+<body>
+<div class="ui container">
+
+    <div class="page-header text-center">
+        <h1 id="profile">Accounts</h1>
+        <a href="/logout" class="ui button">Logout</a>
+        <a href="/" class="ui button">Home</a>
+        <a href="/profile" class="ui button"> Profile</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+                <% if (user.local.email) { %>
+                    <p>
+                        <strong>email</strong>: <%= user.local.email %>
+                    </p>
+
+                    <a href="/unlink/local" class="btn btn-default">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/local" class="btn btn-default">Connect Local</a>
+                <% } %>
+
+            </div>
+        </div>
+
+        <!-- FACEBOOK INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3 class="text-primary"><span class="fa fa-facebook"></span> Facebook</h3>
+
+                <!-- check if the user has this token (is the user authenticated with this social account) -->
+                <% if (user.facebook.token) { %>
+                    <p>
+                        <strong>name</strong>: <%= user.facebook.name %><br>
+                        <strong>email</strong>: <%= user.facebook.email %>
+                    </p>
+
+                    <a href="/unlink/facebook" class="btn btn-primary">Unlink</a>
+                <% } else { %>
+                    <a href="/connect/facebook" class="btn btn-primary">Connect Facebook</a>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
