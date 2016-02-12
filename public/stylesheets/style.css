@@ -39,17 +39,18 @@ body > .grid {
   text-align: center;
 }
 
-.selection {
-  background-color: red;
+.selected {
+  background-color: red !important;
+  color: white !important;
 }
 
 .score {
-  font-size: 22px;
+  font-size: 25px;
   color: #68BDF9;
 }
 
 .gamehead {
-  font-size: 20px !important;
+  font-size: 22px !important;
 }
 
 .notbold {
