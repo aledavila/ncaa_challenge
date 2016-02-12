@@ -33,12 +33,6 @@ module.exports = function(app, passport) {
         user.picks = [];
       }
 
-      // user.facebook.picks.id = req.body.picks.id;
-      // user.facebook.picks.team = req.body.picks.team;
-      // user.facebook.picks.score = req.body.picks.score;
-      // console.log(user.body.picks)
-      // var addPick = {id: user.facebook.picks.id, team: user.facebook.picks.team, score: user.facebook.picks.score};
-
       user.picks.push(newPick);
 
       console.log('user picks: ', user.picks);
@@ -48,13 +42,6 @@ module.exports = function(app, passport) {
 
         res.send('success');
       });
-      /*
-      user.save(function(err) {
-        if (err) console.log(err);
-
-        res.send('success');
-      });
-*/
 
     });
   })
