@@ -1,4 +1,8 @@
+var User = require('./models/user');
+
 module.exports = function(app, passport) {
+
+
 
 // normal routes ===============================================================
 
@@ -8,6 +12,55 @@ module.exports = function(app, passport) {
       user: req.user
     });
   });
+
+
+
+  app.post('/users/add/pick', isLoggedIn, function(req, res, next) {
+    console.log('got here: ', req.user);
+    User.find({ user: req.user.facebook._id }, function(err, users) {
+      var user = users[0];
+      console.log('the user: ', user);
+
+      var newPick = {
+        id: req.body.picks.id,
+        team: req.body.picks.team,
+        score: req.body.picks.score
+      }
+
+      console.log('new pick: ', newPick);
+
+      if (typeof(user.picks) == 'undefined') {
+        user.picks = [];
+      }
+
+      // user.facebook.picks.id = req.body.picks.id;
+      // user.facebook.picks.team = req.body.picks.team;
+      // user.facebook.picks.score = req.body.picks.score;
+      // console.log(user.body.picks)
+      // var addPick = {id: user.facebook.picks.id, team: user.facebook.picks.team, score: user.facebook.picks.score};
+
+      user.picks.push(newPick);
+
+      console.log('user picks: ', user.picks);
+
+      User.findByIdAndUpdate(user._id, { picks: user.picks }, function(err, user) {
+        if (err) console.log(err);
+
+        res.send('success');
+      });
+      /*
+      user.save(function(err) {
+        if (err) console.log(err);
+
+        res.send('success');
+      });
+*/
+
+    });
+  })
+
+
+
 
   // PROFILE SECTION =========================
   app.get('/profile', isLoggedIn, function(req, res) {

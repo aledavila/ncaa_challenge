@@ -24,7 +24,13 @@
 
     <div class="ui middle aligned center aligned grid">
         <div class="nine wide column">
-            <p>hello</p>
+            <% if (user.picks.length) { %>
+                <% for (var i=0; i<user.picks.length; i++) { %>
+
+                    <h3><%= user.picks[i].team %></h3>
+                    <p><%= user.picks[i].score %></p>
+                <% } %>
+            <% } %>
         </div>
         <div class="two wide column">
             <p>win loss</p>

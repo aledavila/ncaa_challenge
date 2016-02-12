@@ -55,6 +55,7 @@ body > .grid {
 .games {
   margin: 5% !important;
   text-align: center;
+  background-color: #D6D6D6 !important;
 }
 
 .score {
@@ -78,6 +79,10 @@ body > .grid {
 .time {
   font-size: 16px;
   color: #D90429;
+}
+
+.extra.content {
+  background-color: white !important;
 }
 
 .extra.content>button {

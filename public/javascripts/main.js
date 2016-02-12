@@ -29,7 +29,6 @@ $(function(){
     var currentGames = data['results']['collection1'];
 
     $.each(currentGames, function(_, value) {
-      // console.log(value);
       appendCurrentGames(value);
     });
 
