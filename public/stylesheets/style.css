@@ -96,7 +96,36 @@ body > .grid {
 
 #profile {
   font-family: Raleway;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 45px;
   margin-bottom: 2%;
 }
+
+#mypicks {
+  font-family: Raleway;
+  font-weight: 600;
+  font-size: 35px;
+  margin-bottom: 2%;
+  color: #D90429;
+}
+
+.pick {
+  background-color: #D6D6D6 !important;
+  margin-top: 5% !important;
+}
+
+.pick h3{
+  font: 15px "Kanit", Helvetica, Arial, sans-serif !important;
+  font-size: 28px !important;
+}
+
+.extra.content.pick {
+  background-color: white !important;
+}
+
+.pick p {
+  font: 15px "Kanit", Helvetica, Arial, sans-serif !important;
+  font-size: 25px !important;
+}
+
+
